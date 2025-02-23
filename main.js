@@ -32,6 +32,15 @@ function playGame(){
         const humanChoise = getHumanChoice();
         playRound(humanChoise, computerChoice);
     }
+    if (computerScore > humanScore) {
+        console.log("Ultimate Winner: Computer");
+    }
+    else if (computerScore < humanScore) {
+        console.log("Ultimate Winner: Human");
+    }
+    else{
+        console.log("ULTIMATE TIE");
+    }
 }
 
 function playRound(humanChoise, computerChoice){
@@ -43,9 +52,8 @@ function playRound(humanChoise, computerChoice){
         console.log("The Computer Wins!")
     }
     else if (humanChoise - 1 == computerChoice || (humanChoise == 0 && computerChoice == 2)) {
-        computerScore++;
+        humanScore++;
         console.log("The Human Wins!")
     }
 }
-
 playGame();
